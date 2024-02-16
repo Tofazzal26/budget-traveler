@@ -40,9 +40,10 @@ for (let index = 0; index < addSelectBtn.length; index++) {
         const sum = convertTotalCost + parseInt(price);
         addElementId('total-cost', sum);
 
+        // grand total
+        grandTotal();
 
-        // addElementId('total-cost', priceCost);
-    })
+    });
     
 }
 
@@ -53,7 +54,11 @@ function addElementId(id, value) {
     element.innerText = value;
 }
 
-
+function grandTotal(category) {
+    const total = document.getElementById('total-cost').innerText;
+    const totalConvert = parseInt(total);
+    addElementId('grand-total', totalConvert);
+}
 
 
 
