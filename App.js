@@ -29,6 +29,22 @@ for (let index = 0; index < addSelectBtn.length; index++) {
         p.innerText = placeName;
         const p2 = document.createElement('p');
         p2.innerText = price;
+
+        // total budget 
+
+        const budget = document.getElementById('budget').innerText;
+        const convertBudget = parseInt(budget);
+
+        if( convertBudget - parseInt(price) < 0) {
+            alert('low budget please earn more');
+            return;
+        }
+
+        document.getElementById('budget').innerText = convertBudget - parseInt(price);
+
+
+
+
         li.appendChild(p);
         li.appendChild(p2);
         cartAdd.appendChild(li);
@@ -58,6 +74,19 @@ function grandTotal(category) {
     const total = document.getElementById('total-cost').innerText;
     const totalConvert = parseInt(total);
     addElementId('grand-total', totalConvert);
+
+
+    if (  category == 'bus') {
+        addElementId('grand-total', totalConvert + 100);
+    } else if( category == 'train') {
+        addElementId('grand-total', totalConvert - 200);
+    } else if( category == 'flight') {
+        addElementId('grand-total', totalConvert + 500);
+    }
+    else {
+        addElementId('grand-total', totalConvert);
+    }
+
 }
 
 
