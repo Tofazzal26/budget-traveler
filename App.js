@@ -36,7 +36,7 @@ for (let index = 0; index < addSelectBtn.length; index++) {
         const budget = document.getElementById('budget').innerText;
         const convertBudget = parseInt(budget);
         
-        
+        event.target.setAttribute("disabled", true);
 
         if( convertBudget - parseInt(price) < 0) {
             alert('low budget please earn more');
