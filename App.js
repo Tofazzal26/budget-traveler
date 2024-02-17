@@ -6,6 +6,7 @@
 
 const addSelectBtn = document.getElementsByClassName('add-btn');
 
+
 let count = 0;
 
 for (let index = 0; index < addSelectBtn.length; index++) {
@@ -34,14 +35,16 @@ for (let index = 0; index < addSelectBtn.length; index++) {
 
         const budget = document.getElementById('budget').innerText;
         const convertBudget = parseInt(budget);
+        
+        
 
         if( convertBudget - parseInt(price) < 0) {
             alert('low budget please earn more');
             return;
         }
+        event.target.parentNode.parentNode.style.background = "gray";
 
         document.getElementById('budget').innerText = convertBudget - parseInt(price);
-
 
 
 
